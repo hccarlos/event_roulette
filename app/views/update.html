@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.3.min.js"></script>
+	<script type="text/javascript" src='http://malsup.github.io/jquery.cycle.all.js'></script>
+	<script type="text/javascript" src="scripts/jquery.cycle.all.2.74.js"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.validation/1.15.0/jquery.validate.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.validation/1.15.0/additional-methods.min.js"></script>
+	<script type="text/javascript" src="static/js/facebookLogin.js"></script>
+	<script>
+		$(document).ready(function() {
+			
+			$('#slideshow').cycle({
+			fx: 'fade',
+			pager: '#smallnav',
+			continuous:0,
+			random:true,
+			});
+
+
+		});
+	</script>	
+	<style type="text/css">
+		*{
+			color:white;
+			font-family: "Courier New", Courier, monospace;
+		}
+		    button, h2, #right p{
+
+      		font-family: verdana;
+		}
+		#right p{
+			text-decoration: underline;
+		}
+		h2{
+			text-decoration: underline;
+			padding-left: 3%;
+		}
+		#slideshow, img.bgM {
+		  min-height: 100%;
+		  min-width: 1024px;
+		  width: 100%;
+		  height: auto;
+		  position: fixed;
+		  top: 0;
+		  left: 0;
+		  z-index:-9999;
+		}
+
+		#screen{
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			width: 100%;
+			height: 100%;
+			background: rgb(54, 25, 25); 
+			background: rgba(3, 3, 3, .4);
+		}
+
+		input[type="checkbox"] {
+    	/* Double-sized Checkboxes */
+    	transform: scale(1.5);         /* FF 16+, IE 10+ */
+	    -webkit-transform: scale(1.5); /* Chrome, Safari 3.5+, Opera 15+ */
+
+	    -ms-transform: scale(1.5);     /* legacy: IE 9+ */
+	    -moz-transform: scale(1.5);    /* legacy: FF 3.5+ */
+	    -o-transform: scale(1.5);      /* legacy: Opera 10.5 */
+  		}
+
+		#box{
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			width: 60%;
+			height: 100%;
+			background: rgb(54, 25, 25); 
+			background: rgba(3, 3, 3, .3);
+
+		}
+		#subbox{
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			width: 95%;
+			height: 100%;
+			background: rgb(54, 25, 25); 
+			background: rgba(3, 3, 3, .9);
+		}
+		#left{
+			position: absolute;
+			width: 50%;
+			height: 40%;
+		/*	background: red;*/
+		}
+/*		#left input{
+			width: 70%;
+			height: 10%;
+			margin: 5%;
+			font-size: 2vmin;
+		}*/
+		#left input, #left p{
+			margin: 4%;
+			font-size: 1.5vmin;
+		}
+		#right{
+			position: absolute;
+			left: 50%;
+			width: 50%;
+			height: 40%;
+			/*background:yellow;*/
+			
+
+		}
+		#leftbottom{
+			position: absolute;
+			top: 47.5%;
+			width:45%;
+			height: 20%;
+			/*background: green;*/
+
+		}
+
+		#rightbottom{
+			position: absolute;
+			left: 55%;
+			top: 47.5%;
+			width: 45%;
+			height: 20%;
+			/*background: blue;*/
+
+		}
+		#middlebottom{
+			position: absolute;
+			top: 47.5%;
+			left: 45%;
+			width:10%;
+			height: 20%;
+			/*background: orange; */
+		}
+		#middlebottom p{ 
+			text-align: center; 
+			padding-top: 75%;
+			font-size: 2.5vmin;
+		}
+
+		#bottom{
+	      position: absolute;
+	      top: 70%;
+	      width:90%;
+
+	      height: 25%;
+	      /*background: pink;*/
+	      overflow: scroll;
+	      border: 1px white solid;
+	      left: 50%;
+	      transform: translate(-50%,0); 
+}
+		#bottom p{
+			margin-left: 3%;
+			margin-right: 3%;
+		}
+
+		.black{
+			color: black;
+
+		}
+
+	p, h2{
+		color: white
+	}
+
+	h2{
+		font-size: 3vmin;
+		font-family: 
+	}
+
+	button{
+		border-radius: 10px;
+		margin-left: 5%;
+		margin-right: 5%;
+		position: absolute;
+		top: 40%;
+		width:90%;
+		height: 20%;
+		font-size: 2vmin;
+	}
+
+	</style>
+</head>
+<body>
+
+
+<div id ="slideshow">
+    	<img src="https://www.soelden.com/urlaub/images/SD/WI/headerbilder/aktivitaeten_header_nightlife,method=render,prop=data.jpg" class="bgM"/>
+			<img src="http://www.kivotosmykonos.com/wp-content/uploads/2015/12/mykonos-nightlife-new-slide1.jpg" class="bgM"/>
+			<img src="http://visitbirmingham.com/files/2012-02-08/mechucocktails_1.jpg" class="bgM"/>
+			<img src="http://www.envyabq.com/uploads/MediaGallery/cfb8258997984eec8cac3005da9749f3/Envy_Nightlife_render_view.jpg" class="bgM"/>
+			<img src="http://img1.10bestmedia.com/Images/Photos/96705/apartment-lounge-nightlife-in-dubai_54_990x660_201404211835.jpg" class="bgM"/>
+			<img src="http://www.adrmediaenterprises.com/TRAVEL.jpg" class="bgM"/>
+			<img src="http://aweinclusive.com/wp-content/uploads/2013/03/635848860383333875-1067205284_Girl-Travel.jpg" class="bgM"/>
+			<img src="http://i.huffpost.com/gen/1455940/images/o-TRAVELING-ALONE-facebook.jpg" class="bgM"/>
+			<img src="http://all-that-is-interesting.com/wordpress/wp-content/uploads/2013/02/four-worlds-most-exotic-trails-noronha2.jpg" class="bgM"/>
+			<img src="http://blogs-images.forbes.com/ibm/files/2015/05/Football-stadium.jpg" class="bgM"/>
+			<img src="http://amazingwallpapers.net/walls/soccer-stadium-wide.jpg" class="bgM"/>
+			<img src="http://grfx.cstv.com/schools/scar/graphics/facilities/carolina-stadium-1.jpg" class="bgM"/>
+	</div>
+	<div id="wrap">
+		<div id='screen'>
+			<div id='box'>
+				<div id='subbox'>
+					<h2>Update Preferences:</h2>
+						<div id='left'>
+							<p>My interests:</p>
+								<input type="checkbox" name="art" checked> Art <br>
+								<input type="checkbox" name="food"> Food &amp; Beverage<br>
+								<input type="checkbox" name="film" checked> Film<br>
+								<input type="checkbox" name="music" checked> Music<br>
+								<input type="checkbox" name="science" checked> Science &amp; Technology<br>
+								<input type="checkbox" name="sports"> Sports<br>
+								<input type="checkbox" name="travel"> Travel<br>
+						</div>
+						<div id="right">
+
+						</div>
+							<div id="leftbottom" >
+								<a href="/projectmain"><button class="black">Update</button></a>
+							</div>	
+							</form>
+						<div id="middlebottom">
+						</div>
+						<div id="rightbottom"> 
+						<a href="/projectmain"><button class="black">Back</button></a>
+						</div>
+					<div id="bottom">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. </p>	
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

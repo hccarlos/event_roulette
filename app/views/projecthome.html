@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.3.min.js"></script>
+  <script type="text/javascript" src='http://malsup.github.io/jquery.cycle.all.js'></script>
+  <script type="text/javascript" src="scripts/jquery.cycle.all.2.74.js"></script>
+  <link rel="stylesheet" href="/static/css/styles.css" type="text/css">
+  <script type="text/javascript" src="static/js/facebookLogin.js"></script>
+  <style type="text/css">
+    *{
+      color:white;
+      font-family: "Courier New", Courier, monospace;
+}
+
+    button{
+      font-family: verdana;
+}
+
+    #slideshow, img.bgM {
+      min-height: 100%;
+      min-width: 1024px;
+      width: 100%;
+      height: auto;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index:-9999;
+}
+
+    #screen{
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%;
+      background: rgb(54, 25, 25); 
+      background: rgba(3, 3, 3, .4);
+}
+    #box{
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 60%;
+      height: 100%;
+      background: rgb(54, 25, 25); 
+      background: rgba(3, 3, 3, .3);
+
+}
+    #subbox{
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 95%;
+      height: 100%;
+      background: rgb(54, 25, 25); 
+      background: rgba(3, 3, 3, .9);
+}
+    .black{
+      color: black;
+}
+
+    .facebook{
+      display: none;
+      position: absolute;
+      top: 47.5%;
+      width:100%;
+      height: 20%;
+}
+
+    #header{
+      /*background:red;*/
+      position: absolute;
+      left: 50%;
+      top: 5%;
+      width: 55%;
+      height: 10%;
+      transform: translate(-50%,0)
+
+}
+    h1{
+      text-align: center; 
+      font-size: 5vmin;
+      font-family: verdana;
+      text-decoration: underline;
+}
+   .inspiration{
+
+      position: absolute;
+      top: 23.5%;
+      width:70%;
+      left: 50%;
+      transform: translate(-50%,0);
+      height: 15%;  
+      /*background: green;*/
+
+    }
+    .inspiration p{
+
+      text-align: center; 
+    }
+
+
+    #login{
+      position: absolute;
+      top: 39.5%;
+      left: 50%;
+      transform: translate(-50%,0);
+      width:30%;
+      height: 6%;
+      /*background: pink;*/
+
+}
+    #login button {
+      position: absolute;
+      width: 80%;
+      height: 80%;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+      border-radius: 10px;
+}
+
+
+
+    .registration{
+      position: absolute;
+      top: 47.5%;
+      width:100%;
+      height: 20%;
+      /*background: blue;*/
+
+}
+
+    .registration button{
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%,0);
+      height: 25%;
+      width: 24%;
+      border-radius: 10px;
+
+}
+    .facebook_right{
+      position: absolute;
+      left: 55%;
+      width: 45%;
+      height: 100%;
+      /*background: blue;*/
+
+}
+.facebook_right #FBbutton{
+      position: absolute;
+      top: 45%;
+      left: 20%;
+      transform: translate(0%,-50%);
+      width: 50%;
+      height: 24%;
+      border-radius: 10px;
+}
+
+    #middlebottom{
+      position: absolute;
+      left: 45%;
+      width:10%;
+      height: 100%;
+      /*background: orange; */
+}
+
+#middlebottom p{
+      font-size: 3vmin;
+      text-align: center;
+      padding-top: 55%; 
+}
+
+    .facebook_left{
+      position: absolute;
+      width:45%;
+      height: 100%;
+      /*background: green;*/
+
+}
+    .facebook_left input{
+      width: 70%;
+      height: 24%;
+      margin: 7.5%;
+      font-size: 3vmin;
+
+}
+
+    #bottom{
+      position: absolute;
+      top: 70%;
+      width:90%;
+
+      height: 25%;
+      /*background: pink;*/
+      overflow: scroll;
+      border: 1px white solid;
+      left: 50%;
+      transform: translate(-50%,0); 
+}
+    #bottom p {
+      margin:2%;
+}
+
+  </style>
+  <script>
+    $(document).ready(function(){
+  		
+      $(".login").click(function(){
+  			$(".registration").slideToggle('medium');
+  			$(".facebook").slideToggle('medium');
+});
+      $('#slideshow').cycle({
+      fx: 'fade',
+      pager: '#smallnav',
+      continuous:0,
+      random:true,
+});
+
+
+    });
+  </script>
+</head>
+  <body>
+
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '324772314534449',
+        xfbml      : true,
+        version    : 'v2.7'
+      });
+    };
+
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "//connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+
+
+  <div id ="slideshow">
+    <img src="https://www.soelden.com/urlaub/images/SD/WI/headerbilder/aktivitaeten_header_nightlife,method=render,prop=data.jpg" class="bgM"/>
+      <img src="http://www.kivotosmykonos.com/wp-content/uploads/2015/12/mykonos-nightlife-new-slide1.jpg" class="bgM"/>
+      <img src="http://visitbirmingham.com/files/2012-02-08/mechucocktails_1.jpg" class="bgM"/>
+      <img src="http://www.envyabq.com/uploads/MediaGallery/cfb8258997984eec8cac3005da9749f3/Envy_Nightlife_render_view.jpg" class="bgM"/>
+      <img src="http://img1.10bestmedia.com/Images/Photos/96705/apartment-lounge-nightlife-in-dubai_54_990x660_201404211835.jpg" class="bgM"/>
+      <img src="http://www.adrmediaenterprises.com/TRAVEL.jpg" class="bgM"/>
+      <img src="http://aweinclusive.com/wp-content/uploads/2013/03/635848860383333875-1067205284_Girl-Travel.jpg" class="bgM"/>
+      <img src="http://i.huffpost.com/gen/1455940/images/o-TRAVELING-ALONE-facebook.jpg" class="bgM"/>
+      <img src="http://all-that-is-interesting.com/wordpress/wp-content/uploads/2013/02/four-worlds-most-exotic-trails-noronha2.jpg" class="bgM"/>
+      <img src="http://blogs-images.forbes.com/ibm/files/2015/05/Football-stadium.jpg" class="bgM"/>
+      <img src="http://amazingwallpapers.net/walls/soccer-stadium-wide.jpg" class="bgM"/>
+      <img src="http://grfx.cstv.com/schools/scar/graphics/facilities/carolina-stadium-1.jpg" class="bgM"/>
+  </div>
+  <div id="wrap">
+    <div id='screen'>
+      <div id='box'>
+        <div id='subbox'>
+        	<div id='header'>
+        	  <h1>Event Roulette</h1>
+          </div>
+
+      	  <div class='inspiration'>
+      	  	<p>'The purpose of life is to live it, to taste experience to the utmost, to reach out eagerly and without fear for newer and richer experience.'</p>
+            <p>-Eleanor Roosevelt</p>
+      	  </div>
+          
+          <div id='login'>
+      	   <button class='login black'>Login</button>
+          </div>
+      	  
+          <div class='registration'>
+      	   <form action='/events/registration_page' method='get'>
+              <button class="black">Registration</button>
+      	   </form>
+      	  </div>
+      	  
+          <div class='facebook'>
+
+      	  	<div class='facebook_left'>
+      		  	<form action='/projectmain' method='post'>
+      		  		<input type='text' name='email' placeholder='Email'><br>
+      		  		<input type='password' name='password' placeholder='Password'>
+      		  		<input type='submit' style='visibility: hidden;'>
+      		  	</form>
+            </div>
+
+            <div id="middlebottom">
+              <p>-or-</p>
+            </div>
+
+        	  <div class='facebook_right'>
+              <fb:login-button id="FBbutton" class='black' scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
+            </div>
+
+          </div>
+	  
+          <div id="bottom">
+            <p>Life is filled with difficult choices, don't let leisure be one of them.  
+            Let Event Roulette choose for you. Ut labore et dolore magna aliqua. 
+            Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. </p>  
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </body>
+</html>

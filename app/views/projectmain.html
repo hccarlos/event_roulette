@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.3.min.js"></script>
+	<script type="text/javascript" src="scripts/jquery.cycle.all.2.74.js"></script>
+	<script type="text/javascript" src='http://malsup.github.io/jquery.cycle.all.js'></script>
+
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSV4vD0VAxAlvUua3gv-2zPQgBFUMAZdc"></script>
+
+	<!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script> -->
+	<script type="text/javascript" src="static/js/facebookLogin.js"></script>
+	<script type="text/javascript" src="static/js/maps.js"></script>
+	<script type="text/javascript" src="static/js/onload.js"></script>
+
+	<script>
+		$(document).ready(function() {
+			
+			$('#slideshow').cycle({
+			fx: 'fade',
+			pager: '#smallnav',
+			continuous:0,
+			random:true,
+			speed:10000,
+			timeout: 15000,
+			});
+		});
+		window.onload = firstLoad;
+	</script>
+
+
+
+	<style type="text/css">
+		*{
+      		color:white;
+      		font-family: "Courier New", Courier, monospace;
+}
+
+    	button{
+      		font-family: verdana;
+}
+		h1{
+			text-align: center; 
+			font-size: 5vmin;
+			font-family: verdana;
+			text-decoration: underline;
+}
+
+
+    	#slideshow, img.bgM {
+			min-height: 100%;
+			min-width: 1024px;
+			width: 100%;
+			height: auto;
+			position: fixed;
+			top: 0;
+			left: 0;
+			z-index:-9999;
+}
+
+		#screen{
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			width: 100%;
+			height: 100%;
+			background: rgb(54, 25, 25); 
+			background: rgba(3, 3, 3, .4);
+}
+		#box{
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			width: 60%;
+			height: 100%;
+			background: rgb(54, 25, 25); 
+			background: rgba(3, 3, 3, .3);
+
+}
+		#subbox{
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			width: 95%;
+			height: 100%;
+			background: rgb(54, 25, 25); 
+			background: rgba(3, 3, 3, .9);
+}
+		.black{
+			color: black;
+}
+
+		#header{
+			/*background:red;*/
+			position: absolute;
+			left: 50%;
+			top: 5%;
+			width: 95%;
+			height: 15%;
+			transform: translate(-50%,0);
+
+}
+		#headerleft{
+			position: absolute;
+			/*background: lime;*/
+			width: 65%;
+			height: 100%;
+}
+		#headerright{
+			position: absolute;
+			/*background: teal;*/
+			width:  35%;
+			height: 100%;
+			left: 100%;
+			transform: translate(-100%,0);
+}
+		#headerright button{
+			width: 75%;
+			height: 25%;
+			position: absolute;
+			top: 15%;
+			left: 50%;
+			transform: translate(-50%,0);
+			border-radius: 10px;
+}
+		#checkbox{
+			position: absolute;
+			top: 50%;
+			left: 15%;
+}
+		input[type="checkbox"] {
+	    	/* Double-sized Checkboxes */
+	    	transform: scale(1.5);         /* FF 16+, IE 10+ */
+		    -webkit-transform: scale(1.5); /* Chrome, Safari 3.5+, Opera 15+ */
+		    -ms-transform: scale(1.5);     /* legacy: IE 9+ */
+		    -moz-transform: scale(1.5);    /* legacy: FF 3.5+ */
+		    -o-transform: scale(1.5); 		/* legacy: Opera 10.5 */
+}     
+		#left{
+			position: absolute;
+			top: 20%;
+			width: 30%;
+			height: 15%;
+			/*background: blue;*/
+			margin-left: 2.5%;
+
+}
+		#left img{
+			width: 100%;
+			height: auto;
+			position: absolute;
+			bottom: 0;
+		}
+
+		#middle{
+			position: absolute;
+			top: 35%;
+			left: 2.5%;
+			/*transform: translate(-50%,0);*/
+			width: 40%;
+			height: 15%;
+			overflow: scroll;
+			/*background: green;*/
+
+}
+
+		#middle p{
+			font-size: 0.8em;
+		}
+		#right{
+			position: absolute;
+			top: 65%;
+			left: 2.5%;
+			/*transform: translate(-100%,0);*/
+			width: 30%;
+			height: 30%;
+			background: yellow;
+}
+
+		#googleMap{
+			width: 100%;
+			height: 100%;
+		}
+
+		#mid_bottom{
+			position: absolute;
+			top: 55%;
+			left: 2.5%;
+		}
+
+		#right_panel{
+			position: absolute;
+			top: 65%;
+			right: 2.5%;
+			/*transform: translate(-100%,0);*/
+			width: 55%;
+			height: 30%;
+			/*background: white;*/
+			overflow: scroll;
+		}
+
+
+		#right_panel *{
+			color:black;
+		}
+
+
+		#bottom{
+			position: absolute;
+			top: 20%;
+			width:55%;
+			height: 20%;
+			/*background: pink;*/
+			overflow: scroll;
+			/*border: 1px white solid;*/
+			right: 2.5%;
+			/*transform: translate(-50%,0); */
+}
+
+.FlashButton {
+	position: relative;
+	background-color: #4CAF50;
+	border: none;
+	font-size: 10px;
+	color: #FFFFFF;
+	padding: 10px;
+	width: 105px;
+	margin-bottom: 5px;
+	text-align: center;
+	-webkit-transition-duration: 0.4s; /* Safari */
+	transition-duration: 0.4s;
+	text-decoration: none;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+.FlashButton:after {
+	content: "";
+	background: #90EE90;
+	display: block;
+	position: absolute;
+	padding-top: 300%;
+	padding-left: 350%;
+	margin-left: -20px!important;
+	margin-top: -120%;
+	opacity: 0;
+	transition: all 0.8s
+}
+
+.FlashButton:active:after {
+	padding: 0;
+	margin: 0;
+	opacity: 1;
+	transition: 0s
+}
+
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: absolute;
+    top: 15%;
+    right: 2.5%;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
+#favorites{
+	margin-bottom: 5px;
+}
+	
+	</style>
+
+</head>
+	<body>
+		<div id ="slideshow">
+			<img src="https://www.soelden.com/urlaub/images/SD/WI/headerbilder/aktivitaeten_header_nightlife,method=render,prop=data.jpg" class="bgM"/>
+			<img src="http://www.kivotosmykonos.com/wp-content/uploads/2015/12/mykonos-nightlife-new-slide1.jpg" class="bgM"/>
+			<img src="http://visitbirmingham.com/files/2012-02-08/mechucocktails_1.jpg" class="bgM"/>
+			<img src="http://www.envyabq.com/uploads/MediaGallery/cfb8258997984eec8cac3005da9749f3/Envy_Nightlife_render_view.jpg" class="bgM"/>
+			<img src="http://img1.10bestmedia.com/Images/Photos/96705/apartment-lounge-nightlife-in-dubai_54_990x660_201404211835.jpg" class="bgM"/>
+			<img src="http://www.adrmediaenterprises.com/TRAVEL.jpg" class="bgM"/>
+			<img src="http://aweinclusive.com/wp-content/uploads/2013/03/635848860383333875-1067205284_Girl-Travel.jpg" class="bgM"/>
+			<img src="http://i.huffpost.com/gen/1455940/images/o-TRAVELING-ALONE-facebook.jpg" class="bgM"/>
+			<img src="http://all-that-is-interesting.com/wordpress/wp-content/uploads/2013/02/four-worlds-most-exotic-trails-noronha2.jpg" class="bgM"/>
+			<img src="http://blogs-images.forbes.com/ibm/files/2015/05/Football-stadium.jpg" class="bgM"/>
+			<img src="http://amazingwallpapers.net/walls/soccer-stadium-wide.jpg" class="bgM"/>
+			<img src="http://grfx.cstv.com/schools/scar/graphics/facilities/carolina-stadium-1.jpg" class="bgM"/>
+		</div>
+		<div id="wrap">
+			<div id='screen'>
+				<div id='box'>
+					<div id='subbox'>
+						<div id='header'>
+							<div id='headerleft'>
+								<h1>Event Roulette</h1>
+							</div>
+							<div id='headerright'>
+<!-- 								<div class="dropdown">
+									<button class="dropbtn">Dropdown</button>
+									<div class="dropdown-content">
+										{% for each in favorited %}
+										<a href="#">Link 1</a>
+										<a href="#">Link 2</a>
+										<a href="#">Link 3</a>
+										{% endfor %}
+									</div>
+								</div> -->
+
+								<form action="/projectmain/update">
+									<button class="black">Edit Preferences</button>
+								</form>
+									<div id="checkbox">
+										<input type="checkbox" id="isFreeSelected"> Cash Light
+									</div>
+							</div>
+						
+						</div>
+						<div id="left"></div>
+						<div id="middle"></div>
+						<div id="right">
+							<div id="googleMap"></div>
+						</div>
+						<div id="mid_bottom">
+							<div id="favorites">
+								<input type="checkbox" id="favorited"> Add to Favorites
+							</div>
+							<button id="NextButton" class="FlashButton">New Event!</button>
+							<button id="get_directions" class="FlashButton">Get Directions!</button>
+						</div>
+						<div id="right_panel"></div>
+						<div id="bottom">
+
+							<div id="eventDescription"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+	</body>
+</html>
